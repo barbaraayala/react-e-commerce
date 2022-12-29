@@ -1,8 +1,17 @@
+/*##### Modulos ####*/
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+/* ### Estilos ###  */
 import './index.css';
+
+/* componentes */
 import App from './App';
+
+/*core */
 import reportWebVitals from './reportWebVitals';
+
+/* logica*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
