@@ -1,14 +1,21 @@
 /*##### Modulos ####*/
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 /* ### Estilos ###  */
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 /* componentes */
 //import App from './App';
 import NavBar from './components/navbar/NavBar.js';
+import Home from './components/home/Home';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailcontainer';
+import AboutUs from './components/aboutUs/AboutUs';
+import Footer from './components/footer/Footer';
+
 
 /*core */
 import reportWebVitals from './reportWebVitals';
@@ -19,8 +26,22 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar/>
-    <ItemListContainer greeting="item"></ItemListContainer>
+    <BrowserRouter>
+    <NavBar />
+       <Home/>
+
+      <Routes>
+                
+        <Route exact path='/'element={<ItemListContainer greeting='estamos en ItemListContainer '/>}/>
+        <Route exact path='/category/id' element={<ItemListContainer greeting='estamos en ItemListContainer'/>}/>
+        <Route exact path='/item/id' element={<ItemDetailContainer greeting='estamos en ItemDetailContainer '/>}/>
+        <Route exact path='/nosotros' element={<AboutUs/>}/>
+            
+      </Routes>
+
+      <Footer />
+
+    </BrowserRouter>
   </React.StrictMode>
 );
 

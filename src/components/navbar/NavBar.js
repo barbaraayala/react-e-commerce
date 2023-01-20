@@ -1,20 +1,32 @@
 import'./NavBar.css'
 import CardWidget from '../cardWidget/Cardwidget.js'
 
-const NavBar =()=>{
-return(
-    <header>
-         <nav class="nav bg-danger-subtle">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link disabled">Disabled</a>
-                <a class="nav-link "><CardWidget cantidad="10"/></a>
-            </nav>
-            
-    </header>
-)
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+const NavBar =() => {
+  return (
+    
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href=""></Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/category/id">Productos</Nav.Link>
+            <Nav.Link href="#cart"><CardWidget cantidad="2"/></Nav.Link> <Nav.Link/>
+            
+
+          </Nav>
+        </Container>
+        <CardWidget/>
+      </Navbar>
+     
+        
+      
+    
+  );
 }
 
-export default NavBar
+export default NavBar;
