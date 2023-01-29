@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect} from 'react'
 
 
@@ -14,12 +15,16 @@ const ItemList = (props) => {
  
     const [productos,setProductos] = useState([])
 
+    
+
 useEffect(()=>{
     fetch('https://fakestoreapi.com/products')
 .then(res=>res.json())
-.then(json => setProductos(json.map(productos => <Item key={productos.id} id={"producto" + productos.id} data={productos}/>)))
+.then(json => setProductos(json.map(productos =>
+     <Item key={productos.id} id={"producto" + productos.id}
+      data={productos}/>)))
 },[])
-    
+  
 
 
     return(

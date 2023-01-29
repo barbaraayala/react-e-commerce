@@ -5,7 +5,7 @@ const Home = () => {
     return(
         <div>
            <p>
-           estamos en la home
+           estamos 
            </p>
         </div>
     )

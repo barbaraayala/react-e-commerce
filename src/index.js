@@ -28,13 +28,13 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <NavBar />
-       <Home/>
+       
 
       <Routes>
                 
-        <Route exact path='/'element={<ItemListContainer greeting='estamos en ItemListContainer '/>}/>
-        <Route exact path='/category/id' element={<ItemListContainer greeting='estamos en ItemListContainer'/>}/>
-        <Route exact path='/item/id' element={<ItemDetailContainer greeting='estamos en ItemDetailContainer '/>}/>
+        <Route exact path='/'element={<ItemListContainer />}/>
+        <Route exact path='/category/:categoryId' element={<ItemListContainer />}/>
+        <Route exact path='/item/:itemId' element={<ItemDetailContainer />}/>
         <Route exact path='/nosotros' element={<AboutUs/>}/>
             
       </Routes>
